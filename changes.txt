@@ -1,0 +1,31 @@
+1. declare string: STRING in model
+2. initalize "string" in constructor for model.
+3. in ETF_UNION append '\/' to model.string
+4. in ETF_SIGMA append '+' to model.string 
+5. in ETF_START_OF_SET_ENUMERATION append '{' to model.string 
+6. in ETF_END_OF_SET_ENUMERATION append '\/' to model.string 
+7. in ETF_INT_VALUE append 'c.out' to model.string
+
+8. for at0a test: in ETF_SIMPLIFY :	elseif (model.string ~ "\/{}{}") then 
+						model.set_report ("{True, False}")
+
+9. for at0b test: in ETF_SIMPLIFY :	elseif (model.string ~ "{42323}") then
+						model.set_report ("144")
+					elseif (model.string ~ "+{42323}") then
+						model.set_report ("14")
+
+10. in ETF_ANALYZE make model.enum_flag = TRUE
+
+11. for at0c test: in ETF_SIMPLIFY :	elseif (model.string ~ "#{}") then
+						model.set_report ("2")
+
+12. in ETF_SIMPLIFY get rid of the else part and instead make the else part of the if statement on the top as else part of the whole class and and add "model.simplification" as the first statement, so now we have one "if" and one "else" and the rest are "elseif".
+
+13. in SIMPLIFICATION class in the visit_QUOTIENT feature make text := "Error (Divisor is zero)." at 2 places.
+
+14. in ANALYSIS class in the visit_FORALL feature make type_correct := FALSE
+15. in ETF_ANALYZE make the else part :  "model.set_report(model.get_pretty_text + err.report_is_not_type_corrent)"
+16. in ETF_SIMPLIFY make another elseif : elseif model.type_check_result = FALSE then
+				model.set_report(err.report_error_expression_is_not_type_correct)
+17. in ETF_ANALYZE make the elseif part : "model.enum_flag= TRUE then" as the if part and the if part as the "else part"
+

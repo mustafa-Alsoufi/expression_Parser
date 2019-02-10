@@ -1,0 +1,7 @@
+start_of_set_enumeration
+modulo
+int_value(4)
+int_value(0)
+end_of_set_enumeration
+analyze
+simplify

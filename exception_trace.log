@@ -1,0 +1,71 @@
+
+expression: system execution failed.
+Following is the set of recorded exceptions:
+
+******************************** Thread exception *****************************
+In thread           Root thread            0x0 (thread id)
+*******************************************************************************
+-------------------------------------------------------------------------------
+Class / Object      Routine                Nature of exception           Effect
+-------------------------------------------------------------------------------
+ARRAYED_LIST        at @2                  index_small_enough:          
+<00000000061C8418>                         Runtime check violated.       Fail
+-------------------------------------------------------------------------------
+ARRAYED_LIST        at @2                                               
+<00000000061C8418>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ETF_MODEL           make @3                                             
+<00000000061C83A8>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+SPECIAL_ITERATION_CURSOR
+                    m @1                   
+<000000000436EF50>  (From ETF_MODEL_ACCESS)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+SPECIAL_ITERATION_CURSOR
+                    _invariant @31         
+<000000000436EF50>  (From ETF_MODEL_ACCESS)
+                                           Class invariant violated.     Fail
+-------------------------------------------------------------------------------
+SPECIAL_ITERATION_CURSOR
+                    _invariant             
+<000000000436EF50>  (From ETF_MODEL_ACCESS)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+SPECIAL_ITERATION_CURSOR
+                    default_create         
+<000000000436EF50>  (From ANY)             Routine failure.              Fail
+-------------------------------------------------------------------------------
+ETF_MODEL_FACADE    make                                                
+<00000000061C8348>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ETF_MAIN_WINDOW     user_create_interface_objects @1
+<00000000061BC868>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ETF_MAIN_WINDOW     create_interface_objects @28
+<00000000061BC868>  (From ETF_MAIN_WINDOW_IMP)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+ETF_MAIN_WINDOW     default_create @1                                   
+<00000000061BC868>  (From EV_ANY)          Routine failure.              Fail
+-------------------------------------------------------------------------------
+ETF_GUI             user_create_interface_objects @1
+<00000000061BA768>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ETF_GUI             make_and_launch @2                                  
+<00000000061BA768>                         Routine failure.              Fail
+-------------------------------------------------------------------------------
+ROOT                make @1                                             
+<00000000061BA5A8>  (From ETF_GUI_ROOT_INTERFACE)
+                                           Routine failure.              Fail
+-------------------------------------------------------------------------------
+ROOT                make @14                                            
+<00000000061BA5A8>  (From ETF_ROOT_INTERFACE)
+                                           Routine failure.              Rescue
+-------------------------------------------------------------------------------
+ROOT                root's creation                                     
+<00000000061BA5A8>                         Routine failure.              Exit
+-------------------------------------------------------------------------------
+
+
+expression: PANIC: caught signal #11 (Segmentation violation) -- Giving up...
